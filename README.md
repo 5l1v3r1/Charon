@@ -1,10 +1,10 @@
 # Charon
 
-Docker container for decoding TrendMicro quarantine files and providing a safe environment to perform light analysis.
+Docker container for decoding TrendMicro quarantine files.
 
 ## Tools
 
-* TrendMicro QTN Decode via Wine
+* TrendMicro QTN Decode via Wine using VSEncode.exe
 * HybridAnalysis VxAPI
 * Radare2
 * PowerShell
@@ -14,6 +14,11 @@ Docker container for decoding TrendMicro quarantine files and providing a safe e
 
 ## Decode TrendMicro Quarantine File
 
-1. docker cp <.qtn file path> /root/malware/<.qtn file name>
-2. cd /root/malware
-3. wine VSEncode.exe -d -i decrypt_location.txt -debug
+```bash
+# Copy .qtn file to VSEncode directory.
+docker cp <.qtn file path> /root/VSEncode/<.qtn file name>
+# Navigate to VSEncode directory.
+cd /root/VSEncode
+# Decode the .qtn file.
+wine VSEncode.exe -d -i decrypt_location.txt -debug
+```

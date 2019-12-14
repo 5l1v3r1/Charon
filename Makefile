@@ -1,4 +1,4 @@
 .PHONY: build
 
 build:
-	@docker build -t viciousowl/charon
+	@docker build -t zaneg/charon
