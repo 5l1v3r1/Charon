@@ -18,6 +18,7 @@ FROM ubuntu:latest
 MAINTAINER Zane Gittins (@ZGittins, https://github.com/zaneGittins)
 
 USER root
+ARG DEBIAN_FRONTEND=noninteractive
 RUN dpkg --add-architecture i386 && \
     apt-get update --fix-missing --yes && \ 
     apt-get install --yes \ 
@@ -29,9 +30,10 @@ RUN dpkg --add-architecture i386 && \
     wget \ 
     apt-utils \
     nano \
-    unzip \ 
+    unzip \
+    binwalk \ 
     wine32 && \
-    pip3 install -q --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org argparse && \
+    pip3 install -q --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org argparse oletools && \
     wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb && \
     dpkg -i packages-microsoft-prod.deb && \
     apt-get update && \
