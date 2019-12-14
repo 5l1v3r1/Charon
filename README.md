@@ -4,8 +4,6 @@ Docker container for decoding TrendMicro quarantine files. Decode the quarantine
 
 ## QuickStart  
 
-Pull from Dockerhub
-
 Build locally.
 
 ```bash
